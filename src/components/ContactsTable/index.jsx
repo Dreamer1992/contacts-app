@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { format } from 'date-fns';
 import parseISO from 'date-fns/parseISO';
+import CopyToClipboardText from '../CopyToClipboardText';
 
 const ContactsTable = ({ data }) => {
 	return (
@@ -50,7 +51,9 @@ const ContactsTable = ({ data }) => {
 									Возраст: {contact.dob.age}
 								</Typography>
 							</TableCell>
-							<TableCell>{contact.phone}</TableCell>
+							<TableCell>
+								<CopyToClipboardText text={contact.phone} />
+							</TableCell>
 							<TableCell>{contact.email}</TableCell>
 							<TableCell>5</TableCell>
 							<TableCell align="right">6</TableCell>

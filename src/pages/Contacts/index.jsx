@@ -6,10 +6,10 @@ import ContactsTable from '../../components/ContactsTable';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		marginTop: '24px',
+		marginTop: theme.spacing(3),
 	},
 	headContainer: {
-		marginBottom: '16px !important',
+		marginBottom: theme.spacing(2) + ' !important',
 	},
 }));
 
