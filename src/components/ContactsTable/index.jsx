@@ -12,6 +12,7 @@ import {
 import { format } from 'date-fns';
 import parseISO from 'date-fns/parseISO';
 import CopyToClipboardText from '../CopyToClipboardText';
+import { NATIONALITIES_HUMAN_NAME } from '../../utils/constants/nationality';
 
 const ContactsTable = ({ data }) => {
 	return (
@@ -55,8 +56,19 @@ const ContactsTable = ({ data }) => {
 								<CopyToClipboardText text={contact.phone} />
 							</TableCell>
 							<TableCell>{contact.email}</TableCell>
-							<TableCell>5</TableCell>
-							<TableCell align="right">6</TableCell>
+							<TableCell>
+								<Typography>
+									{contact.location.country}
+								</Typography>
+								<Typography>
+									{contact.location.city},{' '}
+									{contact.location.street.name}{' '}
+									{contact.location.street.number}
+								</Typography>
+							</TableCell>
+							<TableCell align="right">
+								{NATIONALITIES_HUMAN_NAME[contact.nat]}
+							</TableCell>
 						</TableRow>
 					))}
 				</TableBody>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Container, Typography } from '@mui/material';
+import { Grid, Container, Typography, LinearProgress } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useContacts } from './useContacts';
 import ContactsTable from '../../components/ContactsTable';
@@ -29,7 +29,7 @@ const Contacts = () => {
 				<Grid item xs={12}>
 					{(() => {
 						if (isLoading) {
-							return <Typography>Загрузка...</Typography>;
+							return <LinearProgress color="success" />;
 						}
 
 						if (isError) {
